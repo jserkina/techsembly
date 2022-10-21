@@ -4,6 +4,18 @@ src: url('../asset/fonts/circular-book.ttf');
 font-weight: 400;
 font-style: normal;
 }
+@font-face {
+font-family: 'Circular Std';
+src: url('../asset/fonts/circular-bold.ttf');
+font-weight: 700;
+font-style: normal;
+}
+@font-face {
+font-family: 'Circular Std';
+src: url('../asset/fonts/circular-bookitalic.ttf');
+font-weight: 400;
+font-style: italic;
+}
 
 /* variables */
 :root{
@@ -43,33 +55,42 @@ body,p,a,h1,h2,h3,h4,h5,h6,hr,button,input,textarea,li {
   font-family: inherit;
 }
 
-p {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 150%;
-  color: var(--dark_700);
-}
+
 section {
   padding: 0 12px;
 }
 /* table */
 table {
   width: max-content;
-  text-align: left;
-  padding: 96px 12px;
+  margin: 96px 12px;
+  border-collapse: collapse;
+}
+tr {
+  border-bottom: 1px solid rgba(217, 217, 217, 0.3);
 }
 th {
   padding: 22px 0px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 100%;
 }
 td {
-  padding: 22px 64px;
-}
-.table_logo {
+  padding: 22px;
   text-align: center;
+  width: 154px;
+}
+.table_name {
+  text-align: left;
 }
 .table_text {
   padding: 22px 0px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  width: 154px;
+  text-align: left;
 }
+
 
 /* buttons */
 .btn {
@@ -77,7 +98,7 @@ td {
   justify-content: center;
   align-items: center;
   padding: 14px 24px;
-  min-width: 212px;
+  width: fit-content;
   border-radius: 8px;
   font-weight: 700;
   font-size: 16px;
@@ -95,9 +116,29 @@ td {
   background: #0A1B2B;
   color: #FFFFFF;
 }
+.primary_btn {
+  padding: 14px 50px;
+}
 
 @media screen and (min-width: 768px) {
   section {
     padding: 0px 48px;
+  }
+  table {
+    width: calc(100% - 96px);
+    margin: 150px 48px;
+  }
+  td {
+    padding: 32px 0px;
+  }
+  th {
+    font-size: 32px;
+    line-height: 100%;
+    padding: 32px 0px;
+  }
+  .table_text {
+    font-size: 20px;
+    line-height: 150%;
+    width: 30%;
   }
 }

@@ -8,84 +8,89 @@ import image_cta from '../asset/Image_cta.png'
 import tick from '../asset/Tick.svg'
 import x from '../asset/X.svg'
 import check from '../asset/Check.svg'
+import big_commerce from '../asset/big_Commerce.svg'
+import logo from '../asset/Logo.svg'
+import magento from '../asset/Magento_Logo.svg'
+import shopify from '../asset/Shopify_Logo.svg'
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <section className={styles.hero}>
-        <h2>Join us with your team for 30 days</h2>
-        <h4>Try Techsembly free, no obligations.</h4>
+        <h2 className={styles.hero_title}>Join us with your team for 30 days</h2>
+        <h4 className={styles.hero_subtitle}>Try Techsembly free, no obligations.</h4>
         <button className="btn white_btn">Start your free trial</button>
-        <h5>No credit card required</h5>
+        <h5 className={styles.hero_remark_text}>No credit card required</h5>
       </section>
       <section className={styles.card_section}>
-        <div className={styles.card}>
+        <div className={`${styles.card} ${styles.card_shadow}`}>
           <hr className={styles.blue_line}/>
-          <h3>Assembly</h3>
+          <h3 className={styles.card_title}>Assembly</h3>
           <div className={styles.assembly_frame_with_btn}>
-            <h4>Go global. Launch new storefronts in seconds. Everything you need to bring your products to the world.</h4>
+            <h4 className={styles.card_desc_text}>Go global. Launch new storefronts in seconds. Everything you need to bring your products to the world.</h4>
             <div>
-              <p>Start at $500 USD</p>
-              <p>/yearly or $600 monthly</p>
+              <p className={styles.card_price_text}>Start at $500 <span className={styles.card_price_currency}>usd</span></p>
+              <p className={styles.hero_subtitle}>/yearly or $600 monthly</p>
             </div>
-            <button className="btn blue_btn">Get started</button>
+            <button className="btn blue_btn primary_btn">Get started</button>
           </div>
-          <p>
-            2 Storefronts<br/>5 Vendors<br/>
-            <italic>Add more storefronts and vendors as you grow</italic>
-          </p>
-          <hr className={styles.light_line}/>
-          <div className={styles.assembly_text_frame}>
-            <p>Transaction fee</p>
-            <p>0.25%</p>
+          <div className={styles.card_remark_text}>
+            <p>2 Storefronts</p>
+            <p>5 Vendors</p>
+            <p className={styles.italic}>Add more storefronts and vendors as you grow</p>
           </div>
           <hr className={styles.light_line}/>
           <div className={styles.assembly_text_frame}>
-            <span>Storefront/Vendors addons</span>
+            <p className={styles.italic}>Transaction fee</p>
+            <p className={styles.card_assembly_numbers}>0.25%</p>
+          </div>
+          <hr className={styles.light_line}/>
+          <div className={styles.assembly_text_frame}>
+            <p className={styles.card_assembly_numbers}>Storefront/Vendors addons</p>
           </div>
           {addons.map((item, i) => (
             <div key={i} className={styles.assembly_text_frame}>
-              <p>{item.text}</p>
-              <p>{item.price}</p>
+              <p className={styles.italic}>{item.text}</p>
+              <p className={styles.card_assembly_numbers}>{item.price}</p>
             </div>
           ))}
           <hr className={styles.light_line}/>
           {assembly_info.map((info, i) => (
             <div key={i} className={`${styles.assembly_text_frame} ${styles.assembly_text_with_tick} `}>
               <Image src={tick} width={15} height={15} alt=''/>
-              <p>{info.text}</p>
+              <p className={styles.italic}>{info.text}</p>
             </div>
           ))}
         </div>
         <div className={styles.card}>
           <hr className={styles.dark_line}/>
-          <h3>Enterprise</h3>
+          <h3 className={styles.card_title}>Enterprise</h3>
           <div className={styles.assembly_frame_with_btn}>
-            <h4>For businesses with advanced requirements and customisation needs.</h4>
+            <h4 className={styles.card_desc_text}>For businesses with advanced requirements and customisation needs.</h4>
             <div>
-              <p>Customised</p>
-              <p>to your needs</p>
+              <p className={styles.card_price_text}>Customised</p>
+              <p className={styles.card_desc_text}>to your needs</p>
             </div>
-            <button className="btn black_btn">Let’s chat</button>
+            <button className="btn black_btn primary_btn">Let’s chat</button>
           </div>
           <hr className={styles.light_line}/>
           <div className={styles.assembly_text_frame}>
-            <p>Transaction fee</p>
-            <p>* Negotiable</p>
+            <p className={styles.italic}>Transaction fee</p>
+            <p className={styles.card_assembly_numbers}>* Negotiable</p>
           </div>
           <hr className={styles.light_line}/>
           {assembly_info.map((info, i) => (
             <div key={i} className={`${styles.assembly_text_frame} ${styles.assembly_text_with_tick} `}>
               <Image src={tick} width={15} height={15} alt=''/>
-              <p>{info.text}</p>
+              <p className={styles.italic}>{info.text}</p>
             </div>
           ))}
         </div>
       </section>
       <section className={styles.section_with_mobile}>
         <div className={styles.frame_with_mobile}>
-          <div>You know the little add-ons you’re constantly subscribing to and before you know it, you could have probably paid for a fully customised website instead? </div>
-          <p>With us, we’ve got our hero platform paired with top-notch service - and that’s why you won’t be needing any plug-ins with us. No surprise add-ons, no hidden fees, just a web butler at your service to help you design the website of your dreams, to your liking.</p>
+          <h3 className={styles.section_with_mobile_title}>You know the little add-ons you’re constantly subscribing to and before you know it, you could have probably paid for a fully customised website instead? </h3>
+          <p className={styles.section_with_mobile_subtitle}>With us, we’ve got our hero platform paired with top-notch service - and that’s why you won’t be needing any plug-ins with us. No surprise add-ons, no hidden fees, just a web butler at your service to help you design the website of your dreams, to your liking.</p>
         </div>
         <div><Image src={mob_mockup} width={660} height={792} alt=''/></div>
       </section>
@@ -93,11 +98,11 @@ export default function Home() {
         <table>
           <tbody>
             <tr>
-              <th>Features</th>
-              <th className="table_logo">Contact</th>
-              <th className="table_logo">Country</th>
-              <th className="table_logo">Country</th>
-              <th className="table_logo">Country</th>
+              <th className="table_name">Features</th>
+              <td><Image src={logo} width={176} height={28} alt=''/></td>
+              <td><Image src={big_commerce} width={176} height={28} alt=''/></td>
+              <td><Image src={shopify} width={176} height={28} alt=''/></td>
+              <td><Image src={magento} width={176} height={28} alt=''/></td>
             </tr>
             <tr>
               <td className="table_text">Central platform & global expansion</td>
@@ -122,6 +127,7 @@ export default function Home() {
             </tr>
           </tbody>
         </table>
+
       </section>
       {/*
       <section className={styles.features}>
@@ -145,8 +151,8 @@ export default function Home() {
       <section className={styles.text_block}>
         <Image src={visual} width={546} height={588} alt=''/>
         <div className={styles.text_block_frame}>
-          <div>Why go Enterprise?</div>
-          <p>Our Enterprise solutions is for businesses that have advanced customisation requirements. Our Headless eCommerce API allows clients to communicate with our backend service through mobile applications and 3rd party services/websites.</p>
+          <p className={styles.text_block_title}>Why go Enterprise?</p>
+          <p className={styles.text_block_subtitle}>Our Enterprise solutions is for businesses that have advanced customisation requirements. Our Headless eCommerce API allows clients to communicate with our backend service through mobile applications and 3rd party services/websites.</p>
           <button className="btn white_btn">Chat with our team</button>
         </div>
       </section>
@@ -163,8 +169,8 @@ export default function Home() {
       <section className={styles.sustainability_CTA}>
         <div className={styles.container_CTA}>
           <div className={styles.text_frame_CTA}>
-            <div>Are you a business that actively supports diversity and inclusion, and or sustainability?</div>
-            <p>You may be eligible for a 50% reduction in fees. We want to make the world a better place, a more sustainable place.</p>
+            <h3 className={styles.sustainability_CTA_title}>Are you a business that actively supports diversity and inclusion, and or sustainability?</h3>
+            <p className={styles.sustainability_CTA_subtitle}>You may be eligible for a 50% reduction in fees. We want to make the world a better place, a more sustainable place.</p>
             <button className="btn black_btn">Apply for grant</button>
           </div>
           <div className={styles.img_frame_CTA}>

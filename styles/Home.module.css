@@ -19,8 +19,7 @@
 }
 .card{
   width: 100%;
-  padding: 0px 24px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0px 24px 32px;
   border: 1px solid var(--dark_100);
   display: flex;
   gap: 32px;
@@ -28,10 +27,14 @@
   align-items: center;
   text-align: center;
 }
+.card_shadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 .assembly_frame_with_btn {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  align-items: center;
 }
 .assembly_text_frame {
   display: flex;
@@ -43,9 +46,14 @@
   justify-content: flex-start;
   gap: 20px;
 }
+.assembly_text_with_tick p {
+  text-align: left;
+  width: 80%;
+}
 .blue_line{
   border: 2px solid var(--blue_light);
   width: calc(100vw - 26px);
+  margin-top: 5px;
 }
 .dark_line{
   border: 2px solid var(--dark_900);
@@ -60,6 +68,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 96px;
 }
 .frame_with_mobile{
   width: 100%;
@@ -84,9 +93,15 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 48px;
+  margin-top: 96px;
 }
 .text_block_frame {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
 }
 .sustainability_CTA {
   padding: 96px 12px;
@@ -108,6 +123,7 @@
 }
 .img_frame_CTA {
   position: relative;
+  max-height: 339px;
 }
 .fade_over {
   height: 88px;
@@ -117,21 +133,130 @@
   z-index: 100;
 }
 
+/*------------------------------ TEXT STYLE -----------------------------------*/
+.italic {
+  color: var(--dark_600);
+  font-size: 16px;
+  line-height: 150%;
+  font-style: italic;
+}
+.hero_title {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 100%;
+  color: var(--dark_900);
+}
+.hero_subtitle {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  color: var(--dark_600);
+}
+.hero_remark_text{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--dark_900);
+}
+.card_title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  color: var(--dark_900);
+}
+.card_desc_text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--dark_600);
+}
+.card_price_text {
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 150%;
+  color: var(--dark_900);
+}
+.card_price_currency {
+  font-variant: small-caps;
+}
+.card_price_light_text {
+  color: var(--dark_600);
+}
+.card_remark_text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--dark_700);
+}
+.card_remark_text p{
+  margin-bottom: 5px;
+}
+.card_assembly_numbers {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--dark_700)
+}
+.section_with_mobile_title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  color: var(--dark_900);
+  margin-bottom: 48px;
+}
+.section_with_mobile_subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--dark_700);
+  margin-bottom: 64px;
+}
+.text_block_title {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 120%;
+  color: var(--dark_900);
+}
+.text_block_subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--dark_700);
+}
+.sustainability_CTA_title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  color: var(--dark_900);
+}
+.sustainability_CTA_subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--dark_900);
+}
+
 @media screen and (min-width: 768px) {
   .card {
     width: 432px;
+    padding: 0px 32px 32px;
+  }
+  .card_shadow {
+    box-shadow: none;
   }
   .blue_line{
     width: 430px;
+    margin-top: 0px;
   }
   .dark_line{
     width: 430px;
   }
   .frame_with_mobile{
-    width: 50%;
+    width: 35%;
   }
   .text_block_frame {
-    width: 40%;
+    width: 35%;
   }
   .sustainability_CTA {
     padding: 150px 0px;
@@ -142,11 +267,40 @@
     width: 80%;
   }
   .text_frame_CTA {
-    width: 40%;
+    width: 51%;
+    padding: 76px 0px 76px 64px;
   }
   .fade_over {
     width: 88px;
     height: 100%;
     background: linear-gradient(270deg, rgba(229, 196, 163, 0) 0%, #E5C4A3 100%);
+  }
+  .img_frame_CTA {
+    max-height: 433px;
+  }
+  /*------------------------------ TEXT STYLE -----------------------------------*/
+  .hero_title {
+    font-size: 48px;
+  }
+  .hero_subtitle {
+    font-size: 24px;
+  }
+  .section_with_mobile_title {
+    font-size: 32px;
+  }
+  .section_with_mobile_subtitle {
+    font-size: 24px;
+  }
+  .text_block_title {
+    font-size: 48px;
+  }
+  .text_block_subtitle {
+    font-size: 24px;
+  }
+  .sustainability_CTA_title {
+    font-size: 32px;
+  }
+  .sustainability_CTA_subtitle {
+
   }
 }
